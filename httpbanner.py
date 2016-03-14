@@ -1,8 +1,8 @@
 #-*-coding=utf-8-*-
-# __author__  = 'sanr'
-# __email__   = '5754190@qq.com'
-# __url__     = 'http://0x007.blog.51cto.com/'
-# __version__ = '2.0'
+# __author__  = sanr
+# __email__   = 5754190@qq.com'
+# __url__     = http://0x007.blog.51cto.com/
+# __version__ = 2.0
 import requests
 import re
 import sys

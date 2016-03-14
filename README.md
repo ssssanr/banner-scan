@@ -1,1 +1,1 @@
-# banner-scan
+#banner-scan v2.0
