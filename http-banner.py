@@ -1,6 +1,5 @@
 #-*-coding=utf-8-*-
 # __author__  = sanr
-# __email__   = 5754190@qq.com'
 # __url__     = http://0x007.blog.51cto.com/
 # __version__ = 2.0
 import requests
@@ -28,9 +27,9 @@ def int2ip(addr):
   
 def int_dec(pagehtml):
     '''
-    ÖÇÄÜ»ñÈ¡Ò³Ãæ±àÂë
-    µÚÒ»²½²éÕÒcharset
-    µÚ¶ş²½Ê¹ÓÃchardectÖÇÄÜÆ¥Åä
+    æ™ºèƒ½è·å–é¡µé¢ç¼–ç 
+    ç¬¬ä¸€æ­¥æŸ¥æ‰¾charset
+    ç¬¬äºŒæ­¥ä½¿ç”¨chardectæ™ºèƒ½åŒ¹é…
     '''
     charset = None
     if pagehtml != '':
@@ -81,22 +80,22 @@ def http_banner():
                     body = unicode(body,charset,errors='replace')
                 except Exception, e:
                     body = ''
-            #»ñÈ¡×´Ì¬Âë
+            #è·å–çŠ¶æ€ç 
             Struts=url.status_code
-            #»ñÈ¡webserverĞÅÏ¢
+            #è·å–webserverä¿¡æ¯
             Server=url.headers['server'][0:13]
-            #»ñÈ¡title
+            #è·å–title
             if Struts==200 or Struts==403 or Struts==401:
                 title=re.findall(r"<title>(.*)<\/title>",body)
                 if len(title):
                     title = title[0].strip()
                 else:
                     title = ''
-                #Êä³ö¼ÓËø ·ÀÖ¹µÚ¶şĞĞÊäÈë
-                #ÉêÇëËø
+                #è¾“å‡ºåŠ é” é˜²æ­¢ç¬¬äºŒè¡Œè¾“å…¥
+                #ç”³è¯·é”
                 lock.acquire()
                 print ('%s\t%d\t%-10s\t%s'%(ip.lstrip('http://'),Struts,Server,title))
-                #ÊÍ·ÅËø
+                #é‡Šæ”¾é”
                 lock.release()
         except (requests.HTTPError,requests.RequestException,AttributeError,KeyError),e:
             pass
